@@ -28,7 +28,6 @@ function Koordinatentransformation() {
     });
     console.log(`${endpoint}?${variablenURL.toString()}`);
     try {
-      // API-Anfrage senden
       const response = await fetch(`${endpoint}?${variablenURL.toString()}`);
 
       if (!response.ok) {
@@ -42,16 +41,16 @@ function Koordinatentransformation() {
       setTransformierteX(data.easting || data.coordinates[0]);
       setTransformierteY(data.northing || data.coordinates[1]);
     } catch (err) {
-      setFehler(err.message); // Fehlermeldung anzeigen, falls die Anfrage fehlschlägt
+      setFehler(err.message);
     }
   };
 
   return (
     <Grid2
       container
-      direction="column" // Setzt die Richtung auf vertikal
-      spacing={2} // Abstand zwischen den Elementen
-      alignItems="center" // Zentriert die Elemente horizontal
+      direction="column"
+      spacing={2}
+      alignItems="center"
       sx={{ mt: 4 }}
     >
       <Grid2 titel>
@@ -108,7 +107,7 @@ function Koordinatentransformation() {
         <TextField
           label="Transformierte X-Koordinate"
           variant="outlined"
-          value={transformierteX} // Wird später mit Ergebnis der Transformation gefüllt
+          value={transformierteX}
           sx={{ width: 300 }}
         />
       </Grid2>
@@ -117,7 +116,7 @@ function Koordinatentransformation() {
         <TextField
           label="Transformierte Y-Koordinate"
           variant="outlined"
-          value={transformierteY} // Wird später mit Ergebnis der Transformation gefüllt
+          value={transformierteY}
           sx={{ width: 300 }}
         />
       </Grid2>
