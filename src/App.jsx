@@ -1,7 +1,11 @@
-import Typography from "@mui/material/Typography";
+import Koordinatentransformation from "./Koordinatentransformation";
 
 function App() {
-  return <Typography variant="h3">Hello React + MUI!</Typography>;
+  return (
+    <>
+      <Koordinatentransformation />
+    </>
+  );
 }
 
 export default App;
